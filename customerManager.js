@@ -1,22 +1,10 @@
-const fetch = require("node-fetch");
 
 class CustomerManager {
-  constructor(url){
-    this.url = url;
-    this.data =[];
+  constructor(data){
+    this.data = data;
     this.mostExpensiveOrder = 0;
     this.totalPricesByYear = {};
     this.topCustomer = [];
-  }
-
-  getData = async () => {
-    try {
-        await fetch(this.url)
-              .then(res => res.json())
-              .then(res => this.data = res)
-    } catch (error) {
-      throw error
-    }
   }
 
   getMostExpensiveOrder () {
